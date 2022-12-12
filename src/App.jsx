@@ -12,8 +12,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        {/* <Flex> */}
-        <Box className="navbar-page">
+        <Box>
           <Navbar />
           <Routes>
             <Route exact path="/" element={<Home />} />
@@ -22,10 +21,9 @@ const App = () => {
             <Route exact path="/coins/:id" element={<CoinDetails />} />
           </Routes>
         </Box>
-        <Box className="footer">
+        <Box>
           <Footer />
         </Box>
-        {/* </Flex> */}
       </BrowserRouter>
     </>
   );

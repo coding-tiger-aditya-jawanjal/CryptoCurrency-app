@@ -1,8 +1,6 @@
-import React from "react";
+import React , { useEffect , useState } from "react";
 import axios from "axios";
-import { useEffect } from "react";
 import { server } from "../index";
-import { useState } from "react";
 import { Box, Center, Container, HStack, Spinner } from "@chakra-ui/react";
 import ExchangeCard from "./ExchangeCard";
 
@@ -15,8 +13,8 @@ const Exchanges = () => {
     const fetchExchanges = async () => {
       try {
         const { data } = await axios.get(`${server}/exchanges`);
-      setExchanges(data);
-      setLoading(false);
+        setExchanges(data);
+        setLoading(false);
       } catch (error) {
         setError(true);
         setLoading(false);
@@ -25,21 +23,21 @@ const Exchanges = () => {
     fetchExchanges();
   }, []);
 
-  if(error){
-    return "error"
+  if (error) {
+    return "error";
   }
   return (
     <>
-      <Container maxW={{base:"container.lg","2xl":"100vw"}}>
+      <Container maxW={{ base: "container.lg", "2xl": "100vw" }}>
         {loading ? (
-          <Center >
+          <Center>
             <Box w={"100vw"} h={"100vh"}>
-          <Spinner size={"xl"}/>
-          </Box>
-        </Center>
+              <Spinner size={"xl"} />
+            </Box>
+          </Center>
         ) : (
           <>
-            <HStack wrap={"wrap"} justifyContent={{base:"center"}} >
+            <HStack wrap={"wrap"} justifyContent={{ base: "center" }}>
               {exchanges.map((e) => {
                 return (
                   <ExchangeCard
