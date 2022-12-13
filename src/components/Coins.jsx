@@ -6,6 +6,7 @@ import {
   Center,
   Container,
   Flex,
+  Heading,
   HStack,
   Spinner,
 } from "@chakra-ui/react";
@@ -53,12 +54,15 @@ const Coins = () => {
         ) : (
           <>
             <Flex justifyContent={"space-between"} m={"5"}>
+            <Button type="button" size={"lg"} onClick={Previous}>
+                Previous
+              </Button>
+              <Heading as={"h2"}>Page {page}</Heading>
               <Button type="button" size={"lg"} onClick={Next}>
                 Next
               </Button>
-              <Button type="button" size={"lg"} onClick={Previous}>
-                Previous
-              </Button>
+              
+              
             </Flex>
             <HStack wrap={"wrap"} justifyContent={"space-evenly"}>
               {coins.map((e) => {

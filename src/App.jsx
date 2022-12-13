@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Box } from "@chakra-ui/react";
-import CoinDetails from "./components/CoinDetails";
+import { Box, Flex } from "@chakra-ui/react";
 import Coins from "./components/Coins";
 import Exchanges from "./components/Exchanges";
 import Footer from "./components/Footer";
@@ -12,13 +11,13 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
+      <Flex direction={"column"} minH={"full"} justifyContent={"space-between"}></Flex>
         <Box>
           <Navbar />
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/exchanges" element={<Exchanges />} />
             <Route exact path="/coins" element={<Coins />} />
-            <Route exact path="/coins/:id" element={<CoinDetails />} />
           </Routes>
         </Box>
         <Box>

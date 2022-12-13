@@ -31,7 +31,7 @@ const Exchanges = () => {
       <Container maxW={{ base: "container.lg", "2xl": "100vw" }}>
         {loading ? (
           <Center>
-            <Box w={"100vw"} h={"100vh"}>
+            <Box w={"95vw"} h={"95vh"}>
               <Spinner size={"xl"} />
             </Box>
           </Center>
